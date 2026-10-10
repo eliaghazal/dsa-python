@@ -1,0 +1,3 @@
+In Python, you can create for loops.
+In Python, you can create classes.
+In Python, you can have a parent class and a child class.
