@@ -4,6 +4,13 @@ class User:
     self.last_name = last_name
     self.location = location
     self.hobby = hobby
+    self.login_attempts = 0
+
+  def increment_login_attempts(self):
+    self.login_attempts += 1
+
+  def reset_login_attempts(self):
+    self.login_attempts = 0
 
   def describe_user(self):
     print(f"The user's full name is {self.first_name.title()} {self.last_name.title()}.\nThis user lives in {self.location.title()}.\nThis user's hobby is {self.hobby}.")
@@ -18,3 +25,11 @@ elia.greet_user()
 george = User("george", "khayat", "lebanon", "basketball")
 george.describe_user()
 george.greet_user()
+
+elia.increment_login_attempts()
+elia.increment_login_attempts()
+elia.increment_login_attempts()
+elia.increment_login_attempts()
+print(elia.login_attempts)
+elia.reset_login_attempts()
+print(elia.login_attempts)
