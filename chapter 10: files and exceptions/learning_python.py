@@ -4,6 +4,5 @@ path = Path('dsa-python/chapter 10: files and exceptions/learning_python.txt')
 contents = path.read_text()
 print(contents)
 
-lines = contents.splitlines()
-for line in lines:
+for line in contents.splitlines():
   print(line)
