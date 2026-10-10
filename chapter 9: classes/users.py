@@ -33,3 +33,34 @@ elia.increment_login_attempts()
 print(elia.login_attempts)
 elia.reset_login_attempts()
 print(elia.login_attempts)
+
+class Admin(User):
+
+  def __init__(self, first_name, last_name, location, hobby):
+    super().__init__(first_name, last_name, location, hobby)
+    self.privileges = ["can add post", "can delete post", "can ban user"]
+
+  def show_privileges(self):
+    for privilege in self.privileges:
+      print(privilege)
+
+brian = Admin("Brian", "smith", "USA", "football")
+brian.show_privileges()
+
+class Privileges:
+
+    def __init__(self):
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        for privilege in self.privileges:
+            print(privilege)
+
+class Admin2(User):
+
+  def __init__(self, first_name, last_name, location, hobby):
+    super().__init__(first_name, last_name, location, hobby)
+    self.privileges = Privileges()
+
+sam = Admin2("sam", "winchester", "Texas", "researching")
+sam.privileges.show_privileges()
