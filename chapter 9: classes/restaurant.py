@@ -2,12 +2,19 @@ class Restaurant:
   def __init__(self, restaurant_name, cuisine_type):
     self.restaurant_name = restaurant_name
     self.cuisine_type = cuisine_type
+    self.number_served = 0
 
   def describe_restaurant(self):
     print(f"The restaurant is called {self.restaurant_name.title()}.\nIts cuisine is {self.cuisine_type}.")
 
   def open_restaurant(self):
     print(f"{self.restaurant_name.title()} is open!")
+
+  def set_number_served(self):
+    print(f"Number of customers served is: {self.number_served}.")
+
+  def increment_number_served(self, customer):
+    self.number_served += customer
 
 my_restaurant = Restaurant("Burger King", "American")
 
@@ -30,3 +37,10 @@ taco_bell.open_restaurant()
 
 chick_fil_a.describe_restaurant()
 chick_fil_a.open_restaurant()
+
+mcdonalds.set_number_served()
+mcdonalds.number_served = 10
+mcdonalds.number_served()
+
+mcdonalds.increment_number_served(10)
+mcdonalds.number_served()
