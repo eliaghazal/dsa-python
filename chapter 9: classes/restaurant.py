@@ -40,7 +40,22 @@ chick_fil_a.open_restaurant()
 
 mcdonalds.set_number_served()
 mcdonalds.number_served = 10
-mcdonalds.number_served()
+mcdonalds.set_number_served()
 
 mcdonalds.increment_number_served(10)
-mcdonalds.number_served()
+mcdonalds.set_number_served()
+
+class IceCreamStand(Restaurant):
+  
+  def __init__(self, restaurant_name, cuisine_type):
+    super().__init__(restaurant_name, cuisine_type)
+    self.flavors = ['chocolate', 'vanilla', 'strawberry']
+
+  def list_flavors(self):
+    for flavor in self.flavors:
+      print(f"{flavor}")
+
+icecream = IceCreamStand("Baskin Robbins", "Ice Cream")
+
+icecream.describe_restaurant()
+icecream.list_flavors()
